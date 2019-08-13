@@ -18,13 +18,16 @@ public class HtmlDownloader{
         
         try {
             temp = File.createTempFile("temp", ".txt");
+            System.out.println("created temp file at" + temp.getAbsolutePath()); // create Logger
             temp.deleteOnExit();
         } catch (IOException e) {
             e.printStackTrace();
 		}
         
         try (InputStream inputStream = new URL(s).openStream()){
+            System.out.println("downloading from... " + s);
             Files.copy(inputStream, temp.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("copied html to file"); // create logger
         } catch (Exception e) {
             System.out.println(e);
         }
