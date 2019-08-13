@@ -13,6 +13,8 @@ HtmlReader(){};
 
 
 
+
+
 // static public String readToString(File f){ // take txt file and convert to String
 //     StringBuilder contentBuilder = new StringBuilder();
 
