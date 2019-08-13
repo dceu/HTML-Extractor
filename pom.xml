@@ -25,6 +25,9 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <!--TODO: Add Spring Framework for REST APIs features-->
+
   </dependencies>
 
   <build>
