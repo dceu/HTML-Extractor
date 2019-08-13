@@ -81,6 +81,10 @@ public class Recipe{
         this.ingredients = ingredients;
     }
 
+    public void addIngredient(String s){
+        this.ingredients.add(s);
+    }
+
     public String getPreparation() {
         return this.preparation;
     }
