@@ -1,4 +1,4 @@
-package htmlextractor;
+package htmlextractor.dead;
 
 
 
