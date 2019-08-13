@@ -1,0 +1,7 @@
+target/classes/htmlextractor/Recipe.class
+target/classes/htmlextractor/TextParser.class
+target/classes/htmlextractor/RecipeMapParser.class
+target/classes/htmlextractor/RecipeMap.class
+target/classes/htmlextractor/HtmlReader.class
+target/classes/htmlextractor/HtmlDownloader.class
+target/classes/htmlextractor/App.class

@@ -25,6 +25,15 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!--Jsoup HTML PARSER-->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.12.1</version>
+    </dependency>
+
+    <!--TODO: Add Spring Framework for REST APIs features-->
+
   </dependencies>
 
   <build>
