@@ -7,6 +7,9 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.*;
+
 public class HtmlDownloader{
 
     
@@ -15,7 +18,8 @@ public class HtmlDownloader{
 
     static public File toText(String s) {
         File temp = null;
-        
+       
+
         try {
             temp = File.createTempFile("temp", ".txt");
             System.out.println("created temp file at" + temp.getAbsolutePath()); // create Logger
@@ -32,6 +36,28 @@ public class HtmlDownloader{
             System.out.println(e);
         }
         return temp;
+    }
+
+    static public Document toDocument(String s){
+        
+        File temp = null;
+       
+
+        try {
+            temp = File.createTempFile("temp", ".txt");
+            System.out.println("created temp file at" + temp.getAbsolutePath()); // create Logger
+            temp.deleteOnExit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Document doc = new Document(temp.getAbsolutePath());
+        try{
+            doc = Jsoup.connect(s).get();
+            return doc;
+            }catch (Exception e){
+                System.out.println(e.getCause());
+            }
+        return doc;
     }
 
 }
