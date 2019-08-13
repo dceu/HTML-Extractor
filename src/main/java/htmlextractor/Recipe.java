@@ -6,9 +6,14 @@ public class Recipe{
     String name= "";
     String img = "";
     String shortDes = "";
-    String ingredients = "";
+    List<String> ingredients;
     //List<String> ingredients = new ArrayList<>();
     String preparation = "";
+
+    List<String> altNames;
+    List<String> altImgs;
+    List<String> altDes;
+    List<String> altPrep;
  
 
     Recipe(){}
@@ -17,12 +22,29 @@ public class Recipe{
        this.setName(s);
     }
 
-    Recipe(Map<String,String> m){
-        this.setName(m.get("name"));
-        this.setImg(m.get("img"));
-        this.setShortDes(m.get("description"));
-        this.setIngredients(m.get("ingredients"));
-        this.setPreparation(m.get("preparation"));
+    Recipe(Map<String, List<String>> m){
+        List<String> nameList = m. get("name");
+        List<String> imgList = m.get("img");
+        List<String> ingredList = m.get("ingredients");
+        List<String> description = m.get("description");
+        List<String> prep = m.get("preparation");
+        this.setName(nameList.get(0));
+            if(nameList.size()>1){
+                setAltNames(nameList.subList(1, nameList.size()-1));
+            }
+        this.setImg(imgList.get(0));
+            if(imgList.size()>1){
+                setAltImgs(imgList.subList(1, imgList.size()-1));
+            }
+        this.setShortDes(description.get(0));
+            if(description.size()>1){
+                setAltDes(description.subList(1, description.size()-1));
+            }
+        this.setIngredients(ingredList);
+        this.setPreparation(prep.get(0));
+            if (prep.size()>1){
+                setAltPrep(prep.subList(1, prep.size()-1));
+            }
     }
 
     //* Setters and Getters *//
@@ -51,11 +73,11 @@ public class Recipe{
         this.shortDes = shortDes;
     }
 
-    public String getIngredients() {
+    public List<String> getIngredients() {
         return this.ingredients;
     }
 
-    public void setIngredients(String ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -66,5 +88,55 @@ public class Recipe{
     public void setPreparation(String preparation) {
         this.preparation = preparation;
     }
+
+    
+    public List<String> getAltNames() {
+        return this.altNames;
+    }
+
+    public void setAltNames(List<String> altNames) {
+        this.altNames = altNames;
+    }
+
+    public List<String> getAltImgs() {
+        return this.altImgs;
+    }
+
+    public void setAltImgs(List<String> altImgs) {
+        this.altImgs = altImgs;
+    }
+
+    public List<String> getAltDes() {
+        return this.altDes;
+    }
+
+    public void setAltDes(List<String> altDes) {
+        this.altDes = altDes;
+    }
+
+    public List<String> getAltPrep() {
+        return this.altPrep;
+    }
+
+    public void setAltPrep(List<String> altPrep) {
+        this.altPrep = altPrep;
+    }
+
+
+    @Override
+    public String toString() {
+        return "*****\n" +
+            " name='" + name + "\n" +
+            ", img='" + img + "\n" +
+            ", shortDes='" + shortDes + "\n" +
+            ", ingredients='" + ingredients + "\n" +
+            ", preparation='" + preparation + "\n" +
+            ", altNames='" + altNames + "\n" +
+            ", altImgs='" + altImgs + "\n" +
+            ", altDes='" + altDes + "\n" +
+            ", altPrep='" + altPrep + "\n" +
+            "*****\n";
+    }
+
 
 }
