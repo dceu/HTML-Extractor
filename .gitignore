@@ -10,5 +10,5 @@ target/classes/htmlextractor/App.class
 .vscode/settings.json
 target/classes/htmlextractor/DocumentReader.class
 target/test-classes/htmlextractor/AppTest.class
-target/classes/htmlextractor/SqlOut.class
-**/**.class
+
+**.class
