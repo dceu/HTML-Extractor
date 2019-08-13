@@ -5,3 +5,8 @@ target/classes/htmlextractor/RecipeMap.class
 target/classes/htmlextractor/HtmlReader.class
 target/classes/htmlextractor/HtmlDownloader.class
 target/classes/htmlextractor/App.class
+target/classes/htmlextractor/App.class
+.vscode/launch.json
+.vscode/settings.json
+target/classes/htmlextractor/DocumentReader.class
+target/test-classes/htmlextractor/AppTest.class
