@@ -1,12 +1,10 @@
-target/classes/htmlextractor/Recipe.class
-target/classes/htmlextractor/TextParser.class
-target/classes/htmlextractor/RecipeMapParser.class
-target/classes/htmlextractor/RecipeMap.class
-target/classes/htmlextractor/HtmlReader.class
-target/classes/htmlextractor/HtmlDownloader.class
-target/classes/htmlextractor/App.class
-target/classes/htmlextractor/Recipe.class
-target/classes/htmlextractor/HtmlReader.class
-target/classes/htmlextractor/HtmlDownloader.class
-target/classes/htmlextractor/App.class
+
+
+=======
+
+.vscode/launch.json
+.vscode/settings.json
+
+
 **.class
+>>>>>>> a04540d74025cf2b9610ee9ead0b378c01090aa8
