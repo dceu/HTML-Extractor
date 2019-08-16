@@ -8,13 +8,17 @@ import org.jsoup.nodes.*;
 public class App 
 {
 
-    static String testUrl = "https://iba-world.com/iba-cocktails/";
+    static String[] testUrls = {"https://iba-world.com/iba-cocktails/",
+    "https://iba-world.com/new-era-drinks/",
+    "https://iba-world.com/contemporary-classics/"};
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
         //System.out.println("enter the url to extract data from:");
         System.out.println("In testing mode");
-
+        for (String testUrl : testUrls) {
+            
+        
         try (Scanner scan = new Scanner(System.in)){
             String s = "";
             //s = scan.nextLine();
@@ -25,6 +29,7 @@ public class App
 
         }catch (Exception e){
             e.printStackTrace();
+        }
         }
         
         // try(Scanner scan = new Scanner(System.in)){ // old method
