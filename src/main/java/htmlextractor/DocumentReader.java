@@ -4,6 +4,7 @@ import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.*;
+import java.util.*;
 
 public class DocumentReader{
     String titleSel = "h3:first-child";
@@ -11,8 +12,15 @@ public class DocumentReader{
     String ingredSel = "";
     String descripSel = "";
     String prepSel = "";
+    SqlOut out = new SqlOut();
 
     DocumentReader(Document d){
+        String main = d.select("h1").first().text();
+        String main2 = main.replaceAll(" ","_").toLowerCase();
+        out.createRecipeTable(main2);
+
+        Map<Integer, Recipe> recipeMap = new HashMap<Integer,Recipe>();
+        int mapIndex = 0;
         Element body = d.body();
         body.selectFirst("footer").remove();
         Elements titles = body.select(titleSel);
@@ -27,14 +35,20 @@ public class DocumentReader{
                 System.out.println("");
             }
             r.setShortDes(contents.select("p + p").text()); // description
-            for (Element ingredient : contents.select("li")) {
+            Elements ingredients = contents.select("li");
+            for (Element ingredient : ingredients) {
                 r.addIngredient(ingredient.text());
             }
-            System.out.println(contents.select("li").text()); // ingredients
+            System.out.println(ingredients.text()); // ingredients
             System.out.println(contents.select("p:last-child").text()); // prep
             String prep = contents.select("p:last-child").text();
             r.setPreparation(prep);
+            recipeMap.put(mapIndex, r);
+            out.appendRecipe(r);
+            mapIndex ++;
+
             System.out.println("***** \n");
+
                         
         }
 
