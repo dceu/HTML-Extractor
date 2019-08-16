@@ -3,10 +3,13 @@ package htmlextractor;
 import java.util.*;
 
 public class Recipe{
+    int id;
+
+ 
     String name= "";
     String img = "";
     String shortDes = "";
-    List<String> ingredients;
+    List<String> ingredients = new ArrayList<String>();
     //List<String> ingredients = new ArrayList<>();
     String preparation = "";
 
@@ -48,6 +51,13 @@ public class Recipe{
     }
 
     //* Setters and Getters *//
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getImg() {
         return this.img;
